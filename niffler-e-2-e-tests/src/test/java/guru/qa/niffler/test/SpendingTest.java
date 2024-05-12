@@ -27,7 +27,7 @@ public class SpendingTest {
     private final MainPage mainPage = new MainPage();
     private final String USERNAME = "wil";
     private final String PASSWORD = "123";
-    private final String CATEGORY = "Travel";
+    private final String CATEGORY = "Shopping";
 
 
     static {
@@ -51,8 +51,8 @@ public class SpendingTest {
     }
 
     @GenerateCategory(
-            username = USERNAME,
-            category = CATEGORY
+            category = CATEGORY,
+            username = USERNAME
     )
     @GenerateSpend(
             username = USERNAME,
