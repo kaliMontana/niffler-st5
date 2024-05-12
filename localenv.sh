@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo '### Remove docker containers ###'
-#docker stop $(docker ps -a -q)
-#docker rm $(docker ps -a -q)
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
 
 echo '### Run postgres ###'
 docker run --name niffler-all -p 5432:5432 -e POSTGRES_PASSWORD=secret -v pgdata-st5:/var/lib/postgresql/data -d postgres:15.1
@@ -19,6 +19,5 @@ docker run --name=kafka -e KAFKA_BROKER_ID=1 \
 echo '### Run front ###'
 cd ./niffler-frontend/
 npm i
-#npm run build:dev
-npm run build:windows
+npm run build:dev
 cd ../
