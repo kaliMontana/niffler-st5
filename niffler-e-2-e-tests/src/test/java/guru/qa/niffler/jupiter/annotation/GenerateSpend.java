@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface Spend {
+public @interface GenerateSpend {
     String category();
 
     CurrencyValues currency();

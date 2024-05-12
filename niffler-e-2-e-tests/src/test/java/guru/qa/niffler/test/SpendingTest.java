@@ -2,7 +2,7 @@ package guru.qa.niffler.test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import guru.qa.niffler.jupiter.annotation.Spend;
+import guru.qa.niffler.jupiter.annotation.GenerateSpend;
 import guru.qa.niffler.jupiter.extension.SpendExtension;
 import guru.qa.niffler.model.CurrencyValues;
 import guru.qa.niffler.model.SpendJson;
@@ -24,7 +24,7 @@ public class SpendingTest {
     private final String USERNAME = "wil";
     private final String PASSWORD = "123";
 
-    
+
     static {
         Configuration.browserSize = "1920x1080";
     }
@@ -45,7 +45,7 @@ public class SpendingTest {
         $("a[href*='redirect']").should(visible);
     }
 
-    @Spend(
+    @GenerateSpend(
             username = "wil",
             description = "QA.GURU Advanced 5",
             amount = 65000.00,
