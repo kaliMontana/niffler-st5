@@ -20,7 +20,7 @@ public class MainPage {
 
     public void chooseSpending(SpendJson spendJson) {
         findSpendingByDescription(spendJson.description())
-                .$$("td").first().scrollIntoView(true).click();
+                .$("td").scrollIntoView(true).click();
     }
 
     public void deleteSpending() {
