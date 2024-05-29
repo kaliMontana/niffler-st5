@@ -4,6 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import guru.qa.niffler.jupiter.annotation.GenerateCategory;
 import guru.qa.niffler.jupiter.annotation.GenerateSpend;
+import guru.qa.niffler.jupiter.extension.BrowserExtension;
 import guru.qa.niffler.jupiter.extension.CategoryExtension;
 import guru.qa.niffler.jupiter.extension.SpendExtension;
 import guru.qa.niffler.model.CurrencyValues;
@@ -18,7 +19,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-@ExtendWith({CategoryExtension.class,
+@ExtendWith({
+        BrowserExtension.class,
+        CategoryExtension.class,
         SpendExtension.class
 })
 public class SpendingTest {
