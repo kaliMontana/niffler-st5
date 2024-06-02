@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class MainPage {
     private final ElementsCollection spendingRows = $(".spendings-table tbody").$$("tr");
     private final SelenideElement deleteSpendingButton = $(".spendings__bulk-actions button");
+    private final SelenideElement peoplePage = $("[data-tooltip-id='people']");
 
 
     public SelenideElement findSpendingByDescription(String description) {
@@ -29,5 +30,10 @@ public class MainPage {
 
     public void checkSpendingWasDeleted(int size) {
         spendingRows.shouldHave(size(size));
+    }
+
+    public PeoplePage openPeoplePage(){
+        peoplePage.click();
+        return new PeoplePage();
     }
 }
